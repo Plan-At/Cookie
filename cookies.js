@@ -1,10 +1,13 @@
+
+//This function sets cookies. First input is the name of the cookie (string), second is it's value (string). Third is days until it expires (int).
 function setCookie(cname,cvalue,exdays) {
     const d = new Date();
     d.setTime(d.getTime() + (exdays*24*60*60*1000));
     let expires = "expires=" + d.toUTCString();
     document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
-      
+
+//This function gets the value of a cookie. The input is the name of the cookie (string). It returns the vale of the cookie (string). If the cookie has no value/does not yet exist, it returns "".
 function getCookie(cname) {
     let name = cname + "=";
     let decodedCookie = decodeURIComponent(document.cookie);
